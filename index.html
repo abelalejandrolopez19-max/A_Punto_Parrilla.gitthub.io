@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A Punto Parrilla | El sabor perfecto en cada punto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#353534",
+                    "on-primary-container": "#5b000e",
+                    "secondary-fixed": "#ffdea5",
+                    "on-secondary-fixed": "#261900",
+                    "on-surface-variant": "#e4bebc",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "on-tertiary-container": "#37261a",
+                    "outline": "#ab8987",
+                    "inverse-on-surface": "#313030",
+                    "surface-container": "#201f1f",
+                    "surface-bright": "#3a3939",
+                    "primary": "#ffb3b1",
+                    "on-error-container": "#ffdad6",
+                    "background": "#131313",
+                    "outline-variant": "#5b403f",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-container": "#a58c7c",
+                    "tertiary": "#dec1af",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "on-primary-fixed-variant": "#92001c",
+                    "secondary-fixed-dim": "#e9c176",
+                    "on-surface": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "on-tertiary": "#3f2c20",
+                    "surface-container-low": "#1c1b1b",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-primary": "#bb152c",
+                    "surface-tint": "#ffb3b1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-container": "#dab36a",
+                    "surface-variant": "#353534",
+                    "secondary-container": "#604403",
+                    "secondary": "#e9c176",
+                    "primary-container": "#ff535b",
+                    "tertiary-fixed-dim": "#dec1af",
+                    "on-tertiary-fixed": "#28180d",
+                    "surface-dim": "#131313",
+                    "on-tertiary-fixed-variant": "#574335",
+                    "surface": "#131313",
+                    "on-background": "#e5e2e1",
+                    "primary-fixed": "#ffdad8",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#410007",
+                    "on-primary": "#680011",
+                    "tertiary-fixed": "#fbddca",
+                    "on-secondary": "#412d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin-x": "32px",
+                    "container-max": "1280px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .grain-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 179, 177, 0.3);
+        }
+        .meat-gauge-gradient {
+            background: linear-gradient(90deg, #ffb3b1 0%, #ff535b 50%, #93000a 100%);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/10 shadow-2xl shadow-primary/5">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-x py-4">
+<div class="flex items-center gap-2">
+<img alt="Logo A Punto Parrilla" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ujRI_3iWv5W3z4xQA886wh-nF6qNzzhY8Bd_fhRZc4uWGhApR9E8vHVdU8kft3yE1PON4yq4KybhEtD9gIt0IyZ1Q5HcoB5uyUuvPIw-iBn_nH4D2Cl7S42f6xjrtAtACklY4NTdOyHUENjiVc-PJr0bhpUEuWRgLCYfxkr-u6vnAIfQXYw1EiloswLwAm0-qsMoFGJlWqgdlzePjvDjunZfa2SXVOW5hQX7MLQsCjFs8NDEerGiroh7oLRcJhp9hbK3GdTjcd4Xg"/>
+<span class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">A Punto Parrilla</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#menu">Menu</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#specialties">Specialties</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#reservations">Reservations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#location">Location</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#contact">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:opacity-80 transition-opacity active:scale-95 duration-200">
+                RESERVAR MESA
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic close-up of a premium Argentine ribeye steak sizzling on a traditional charcoal grill. Glowing orange embers illuminate the scene from below, casting a warm light through the rising woodsmoke. The atmosphere is dark and intimate, with deep charcoal tones and a high-end gourmet aesthetic. The textures of the charred meat and the glowing coals are sharp and detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEbdt_xwWony0xsoQl8Pyl3CfN7cHy3L54eIMstuElfKwEufw62x5ddAJFF0z2evzSZZD45TmsR6gwrrw11MCkdEcsM7T5hzmeASEr57Z1Vzh3jyBPpbktFvFe37sX3QfHyqEWntvxehyXsrA1A4HIVr4LFwV6fvPfFgEqgGwxhIwSl2xjbNoc6csNofp2Ea0Oxhv2qWiuFsUaGZxRHWdrsvOI9p-HZ9PkMa3NI1ikgVNtEJ6PeQ-f0fp5HYP3Rib-4MjUmNASBgI"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-x">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-[0.3em] mb-6 block">Experiencia Gastronómica Única</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-8 text-glow">El sabor perfecto en cada punto</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                    Descubra el arte de la parrilla argentina tradicional con un toque gourmet. Cortes seleccionados, brasa viva y una cava de vinos excepcional en Berazategui.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<a class="w-full md:w-auto bg-primary-container text-on-primary-container px-10 py-4 rounded-full font-label-md text-label-md hover:shadow-[0_0_30px_rgba(255,83,91,0.4)] transition-all" href="#menu">
+                        VER MENÚ
+                    </a>
+<a class="w-full md:w-auto border border-secondary text-secondary px-10 py-4 rounded-full font-label-md text-label-md hover:bg-secondary/10 transition-all" href="#reservations">
+                        RESERVAR MESA
+                    </a>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-on-surface-variant opacity-50">
+<span class="font-label-sm text-label-sm">Scroll para explorar</span>
+<span class="material-symbols-outlined animate-bounce">expand_more</span>
+</div>
+</section>
+<!-- Especialidades Section -->
+<section class="py-section-gap bg-surface" id="specialties">
+<div class="max-w-container-max mx-auto px-margin-x">
+<div class="flex justify-between items-end mb-16">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Nuestras Especialidades</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Cortes premium madurados y preparados por nuestros maestros parrrilleros para garantizar la ternura ideal.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-4 transition-all" href="#menu">
+                        CARTA COMPLETA <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Specialty Card 1 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10 hover:border-primary/30 transition-all">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A gourmet presentation of Bondiola BBQ, slow-cooked pork shoulder glazed in a rich, dark homemade barbecue sauce. The meat is tender and pulling apart, served on a rustic dark wood board with a sprinkle of sea salt. The lighting is cinematic, focusing on the glossy texture of the sauce against a dark, moody restaurant interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8RQXRzgvdejJwdt8pcxsg_r780RQbN6wdn0dL9GRRCFhtYbjiUIQSyxTq41evlV_axwmPmbR9HvCXwi71mOIZfB5sEeaG5Wis_sCN0HIe6_b30qletx1OHxVa90p_uFX6Y8U0mnaxqEhHnAM2wm0S8aVX2jrwiPYSgMhyLe4e2hxrroB9yibYgH9AW6GrSFIbNV4gQuvZDWQ6f0KdLNnVGNyXvVHD9KjoGSEZTsmRvrtty8WPcHv_dKfRS3eXVOS21AyamjATzWk"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Bondiola BBQ</h3>
+<span class="text-primary font-bold">$12.500</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Cocción lenta por 12 horas, glaseada con nuestra barbacoa casera y acompañada de puré rústico.</p>
+<button class="flex items-center gap-2 text-primary font-label-md text-label-md group/btn">
+                                PEDIR AHORA <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Specialty Card 2 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10 hover:border-primary/30 transition-all">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A premium Lomo Glaseado, a thick beef tenderloin steak grilled to perfection with a mahogany-colored balsamic glaze. The steak is sliced to reveal a perfect medium-rare center. It is artfully presented on a black slate plate with charred asparagus and roasted garlic. Elegant lighting highlights the moisture and rich color of the meat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZkem6HHk3q4zNbTE9H1pfvKhZ06gJiyBk2NRwmI48DUQrX3fIUBmyf39IMDyjjQwP4mckri8_v8GL_qDkV0dVNTCFpAsmQCbqv8646FRByANebu1tpk8t1v3LRl7Vk30ZlTYBj9fvlTmQlkOaNxtMw_YVGreknWc8M7zKm0dGEfR9aSZAEKnby_BYOmk2OYJiXM1L6sTfFF54q52CfF_bCm4FJ2ndAhm-mRwJ1H3bQ67SHqZLM30Ne8yWvx8le07jkUX_AGn28Ic"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Lomo Glaseado</h3>
+<span class="text-primary font-bold">$15.200</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Corazón de lomo con reducción de malbec y romero, servido con vegetales grillados a la leña.</p>
+<button class="flex items-center gap-2 text-primary font-label-md text-label-md group/btn">
+                                PEDIR AHORA <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Specialty Card 3 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10 hover:border-primary/30 transition-all">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A classic Ojo de Bife, a thick-cut ribeye steak with incredible marbling, being cooked over open fire. Flame licks the edges of the meat, creating a perfect crust. The background is a dark Argentine grill setting with scattered sea salt and fresh herbs. The visual style is rustic yet refined, focusing on the sensory power of fire and meat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpQxouqoVVRiT3EhPejCrTsbXcDFxn8uKlfwFWMeyAGW2yAeaKzN36VWylBp5MJLfoyjcwq4xwH4TXM0dACJrwMIrmKbkKpljkpMQ6ApCDCImPB0eUXr78Va-nxNNRyFmfGG3c1E9DyiLjZCCVuLgLIpStlHpq6QwJOiJ3Euj5WWyubiIPWVGierLvyIoiJc8ih3te8NX_p024hJarhazK-mcJOyU1NkjDushqxsxlHIbLw5p5UbXKI2WC3GKa9Oj1JvQNT7bcQGE"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Ojo de Bife</h3>
+<span class="text-primary font-bold">$16.800</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">400g de puro sabor con marmoleo perfecto, sal de mar y el ahumado característico de nuestra leña.</p>
+<button class="flex items-center gap-2 text-primary font-label-md text-label-md group/btn">
+                                PEDIR AHORA <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Meat Gauge Feature -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-4xl mx-auto px-margin-x text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">¿Cómo prefiere su carne?</h2>
+<div class="relative py-12">
+<div class="h-2 w-full meat-gauge-gradient rounded-full"></div>
+<div class="flex justify-between mt-6">
+<div class="flex flex-col items-center gap-2">
+<span class="font-label-md text-label-md text-primary">Vuelta y Vuelta</span>
+<span class="text-[10px] text-on-surface-variant">Blue</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface">Jugoso</span>
+<span class="text-[10px] text-on-surface-variant">Rare</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-4 h-4 bg-primary-container rounded-full ring-4 ring-primary-container/20 -translate-y-12 absolute left-[50%]"></div>
+<span class="font-label-md text-label-md text-primary-container font-bold">A Punto</span>
+<span class="text-[10px] text-on-surface-variant">Medium</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface">Cocido</span>
+<span class="text-[10px] text-on-surface-variant">Medium Well</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface">Bien Cocido</span>
+<span class="text-[10px] text-on-surface-variant">Well Done</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pedidos Online Banner -->
+<section class="py-16 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-x">
+<div class="relative rounded-2xl overflow-hidden bg-primary-container p-12 md:p-20 shadow-[0_20px_50px_rgba(255,83,91,0.3)]">
+<div class="absolute inset-0 z-0 opacity-10 mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="A background texture of high-quality Argentine beef cuts, emphasizing fresh marbling and professional preparation. The image is used as a subtle overlay for a promotional banner, maintaining a premium look with dark red and charcoal tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZQfynFIXI0C8ODDm6DFZPZLLmgZC5A4SVvhhTV11rt8vTcBYUhPSOjafAEbOnQFFeVy-us62cHgJk2Pp8GrUEr6HtVuNw4-xS6JAmecT3kS42OqJJ4bTvsd3KYeiLpUpjsctKB8OAms64b4mGAFWzhUU0BzMPMTR0kd-OCFDwR853dobUVj5nfzWyw6IFH_q38x7QBGaR1WTmAcBf09TytRqy-J76lByuLLOJJttGdb8eTZflaKROPUp0SovG4l0KdcFjNWRAD7Q"/>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="text-center md:text-left">
+<h2 class="font-headline-xl text-headline-xl text-on-primary-container mb-4">A Punto en su Casa</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container/80 max-w-lg">
+                                Disfrute de nuestra calidad premium desde la comodidad de su hogar. Envíos rápidos en todo Berazategui.
+                            </p>
+</div>
+<button class="bg-on-primary-container text-primary-container px-12 py-5 rounded-full font-label-md text-label-md font-extrabold hover:scale-105 transition-transform">
+                            RESERVAR MESA
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonios -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-x">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Reseñas de Comensales</h2>
+<div class="flex justify-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/10">
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-8">"El mejor Ojo de Bife que he probado en años. El punto de cocción fue exactamente el que pedí. El ambiente es íntimo y la atención de primer nivel."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">JD</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Juan Delgado</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Guía Gastronómico</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/10">
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-8">"Una joya escondida en Berazategui. La cava de vinos es impresionante y el maridaje que nos recomendaron con el lomo glaseado fue sublime."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">MA</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Mariana Álvarez</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Cliente Frecuente</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/10">
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-8">"Pedí por la web y la experiencia fue impecable. La carne llegó a la temperatura perfecta y el packaging es tan premium como la comida."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">RP</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Ricardo Pereyra</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Vecino de Berazategui</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ubicación y Contacto -->
+<section class="py-section-gap bg-surface" id="location">
+<div class="max-w-container-max mx-auto px-margin-x">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-stretch">
+<div class="bg-surface-container-high p-12 rounded-2xl flex flex-col justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Visítenos en Berazategui</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Calle 148 N° 1234</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Berazategui, Buenos Aires</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Horarios de Atención</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Martes a Domingo: 12:00 - 15:30 | 20:00 - 00:00</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">call</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Contacto Directo</p>
+<p class="font-body-md text-body-md text-on-surface-variant">+54 11 1234-5678</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex flex-col gap-4">
+<a class="flex items-center justify-center gap-3 bg-[#25D366]/20 text-[#25D366] py-4 rounded-xl font-label-md text-label-md border border-[#25D366]/30 hover:bg-[#25D366]/30 transition-all" href="https://wa.me/541112345678" target="_blank">
+<span class="material-symbols-outlined">chat</span> HABLAR POR WHATSAPP
+                            </a>
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-label-md text-label-md hover:opacity-90">
+                                CÓMO LLEGAR
+                            </button>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden min-h-[400px]">
+<img class="w-full h-full object-cover" data-alt="A stylized, high-contrast dark mode map showing the Berazategui area in Buenos Aires. The map features minimalist linework with charcoal and dark gold tones, highlighting the specific location of A Punto Parrilla with a glowing red marker. The visual style matches the premium nocturnal gourmet aesthetic of the brand." data-location="Berazategui" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1N7hK7i5dN6jBbh95WIuPpAiuS5ZIrek-MKbBQBg9ugc9Qt0vQNXYmU0Jsz8QTw3ZyQp076LH0aZ6c6ug55QIfdp0KHz0CqJh6AT1E2EGqBCtp-4CRYCR1As5HT1PlHBe1ozIwM1Bm7LjJLPPwUugJszSTJb7bB3jTI5EGuDjjLhj0cpHHWmzM4utf1mDVtahFy6Fe6bwUozwSr61JKeDWLCs8KbQ5k-MkmMCmhl8O_Rm4-tjt6gJE33WNNkYVsXF67L28qV4O2E"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10 w-full py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto px-margin-x text-center md:text-left">
+<div>
+<span class="font-headline-md text-headline-md text-primary block mb-4">A Punto Parrilla</span>
+<p class="font-body-md text-body-md text-on-surface-variant">El epicentro del sabor en Berazategui. Pasión por las brasas y compromiso con la excelencia.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest mb-2">Enlaces</span>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#">Menú Digital</a>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#">Reservas</a>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#">Historia</a>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest mb-4 block">Seguinos</span>
+<div class="flex justify-center md:justify-start gap-6">
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-all hover:translate-y-[-2px]" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-all hover:translate-y-[-2px]" href="#">WhatsApp</a>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-all hover:translate-y-[-2px]" href="#">Facebook</a>
+</div>
+<div class="mt-12">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 A Punto Parrilla. Todos los derechos reservados.</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB for quick action -->
+<button class="fixed bottom-8 right-8 bg-primary-container text-on-primary-container p-4 rounded-full shadow-2xl shadow-primary/40 md:hidden z-40">
+<span class="material-symbols-outlined">restaurant_menu</span>
+</button>
+</body></html>
